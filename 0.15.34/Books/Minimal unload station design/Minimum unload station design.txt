@@ -1,4 +1,5 @@
 # Minimum unload station design blueprint book
+# Author: Lactosis
 # Usage: put down starter blueprint, then extend as far as you want with bottom extensions and upper extensions.
 # Upper fits on bottom, do not put starter multiple times.
 # When you put down the last piece, put Help: blueprint on the last platform (furthest from the entrance).
