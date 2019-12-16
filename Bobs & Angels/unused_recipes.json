@@ -1,0 +1,44 @@
+{
+
+  "Jivolite Ore Crushing": {
+    "inputs": [
+      {
+        "resource": "Jivolite Ore",
+        "amount": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crushed Jivolite",
+        "amount": 2
+      },
+      {
+        "resource": "Crushed Stone",
+        "amount": 1
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Crusher"
+  },
+  "Crotinnium Ore Crushing": {
+    "inputs": [
+      {
+        "resource": "Crotinnium Ore",
+        "amount": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crushed Crotinnium",
+        "amount": 2
+      },
+      {
+        "resource": "Crushed Stone",
+        "amount": 1
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Crusher"
+  },
+
+}
