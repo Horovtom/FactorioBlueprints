@@ -40,5 +40,55 @@
     "time": 1.0,
     "building": "Ore Crusher"
   },
-
+  "Fluoric Waste Water Purification": {
+    "inputs": [
+      {
+        "resource": "Fluoric Waste Water",
+        "amount": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Fluorite Ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Mineralized Water",
+        "amount": 20.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 70.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Hydro Plant"
+  },
+  "200x Compressed Air": {
+    "inputs": [],
+    "outputs": [
+      {
+        "resource": "Compressed Air",
+        "amount": 200.0
+      }
+    ],
+    "time": 6.0,
+    "building": "Air Filter"
+  },
+  "Rubber (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Resin",
+        "amount": 4.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Rubber",
+        "amount": 1.0
+      }
+    ],
+    "time": 3.5,
+    "building": "Furnace"
+  }
 }

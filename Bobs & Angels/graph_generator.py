@@ -3,6 +3,8 @@ import json
 from graphviz import Digraph
 
 
+# TODO: ADD FROM/TO Graph generation
+
 def run():
     with open("recipes.json", 'r') as recipes_file:
         recipes = json.load(recipes_file)
@@ -14,14 +16,20 @@ def run():
             unused_recipes = json.load(unused_recipes_file)
         recipes = {**recipes, **unused_recipes}
 
+    compress_water = input("Do you want to compress water into nodes? (y/n): ")
+    compress_water = len(compress_water) == 0 or compress_water.lower() == "y"
+
     dot = Digraph(comment="Recipes graph :)")
 
     def find_all_resources():
         resources = []
         resources_in_lower = []
 
-        def do(wh):
+        def do(wh, ignore_water_compression=False):
             resource_name = wh["resource"]
+            if resource_name.lower() == "water" and compress_water and not ignore_water_compression:
+                return
+
             if resource_name.lower() not in resources_in_lower:
                 resources.append(resource_name)
 
@@ -29,7 +37,7 @@ def run():
             for resource in recipe["inputs"]:
                 do(resource)
             for resource in recipe["outputs"]:
-                do(resource)
+                do(resource, ignore_water_compression=True)
 
         return resources
 
@@ -41,6 +49,9 @@ def run():
     def create_recipe_nodes():
         for recipe_name in recipes.keys():
             label = "{}\\n{}\\n{}s".format(recipe_name, recipes[recipe_name]["building"], recipes[recipe_name]["time"])
+            if len(list(filter(lambda x: x["resource"].lower() == "water",
+                               recipes[recipe_name]["inputs"]))) > 0 and compress_water:
+                label += "\\n+Water"
             dot.node(get_node_name(recipe_name), label=label, shape="box")
 
     def create_resource_nodes():
@@ -67,6 +78,9 @@ def run():
             inputs = recipes[recipe_name]["inputs"]
             craft_time = recipes[recipe_name]["time"]
             for input in inputs:
+                if get_node_name(input["resource"]) == "water" and compress_water:
+                    continue
+
                 am = input["amount"] / craft_time
                 if am.is_integer():
                     label = "{}x\\n{}/s".format(input["amount"], int(am))
