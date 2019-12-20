@@ -1,5 +1,5 @@
-import Resource
-from helpers import format_number
+from logic import Resource
+from logic.helpers import format_number
 
 
 class Recipe:

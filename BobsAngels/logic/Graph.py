@@ -1,14 +1,15 @@
 from graphviz import Digraph
 
-from Recipe import Recipe
-from Resource import Resource
-from helpers import warning, convert_name
+from logic.Recipe import Recipe
+from logic.Resource import Resource
+from logic.helpers import warning, convert_name
 
 
 class Graph:
     def __init__(self, recipes: dict):
         self.recipes_json: dict = recipes
         self.resources: dict = {}
+        self.resources_name_map: dict = {}
         self.recipes: dict = {}
         self.construct()
 
@@ -27,6 +28,7 @@ class Graph:
         if resource_converted_name not in self.resources:
             # Add a new one to the list
             self.resources[resource_converted_name] = Resource(resource_human_name, resource_converted_name)
+            self.resources_name_map[resource_human_name] = resource_converted_name
 
         return self.resources[resource_converted_name]
 
@@ -69,3 +71,8 @@ class Graph:
         for recipe in self.recipes.values():
             recipe.add_to_dot(dot, compress_water)
         return dot
+
+    def get_resources_list(self):
+        res = list(self.resources_name_map.keys())
+        res.sort()
+        return res

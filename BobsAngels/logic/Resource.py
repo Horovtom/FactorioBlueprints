@@ -1,4 +1,4 @@
-import Recipe
+from logic import Recipe
 
 
 class Resource:
