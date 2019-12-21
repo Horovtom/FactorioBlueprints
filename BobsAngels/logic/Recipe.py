@@ -23,12 +23,17 @@ class Recipe:
         self.output_resources[resource.converted_name] = (resource, amount)
         resource.add_as_result(self)
 
+    def get_input_resources(self):
+        return [x[0] for x in self.input_resources.values()]
+
+    def get_output_resources(self):
+        return [x[0] for x in self.output_resources.values()]
+
     def add_to_dot(self, dot_obj, compress_water=True):
 
         label = "{}\\n{}\\n{}s".format(self.human_name, self.building, format_number(self.time))
-        if compress_water:
-            if "water" in map(lambda x: x[0].converted_name, self.input_resources.values()):
-                label += "\\n+Water"
+        if compress_water and any(x.is_water() for x in self.get_input_resources()):
+            label += "\\n+Water"
 
         dot_obj.node(self.converted_name, label=label, shape="box", style="filled", fillcolor="skyblue")
 

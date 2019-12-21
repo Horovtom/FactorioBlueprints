@@ -16,7 +16,10 @@ class Resource:
         self.ingredient_of.append(recipe)
 
     def add_to_dot(self, dot_obj, compress_water=True):
-        if compress_water and self.human_name.lower() == "water":
+        if compress_water and self.is_water():
             return
 
         dot_obj.node(self.converted_name, label=self.human_name, shape="ellipse", style="filled", fillcolor="crimson")
+
+    def is_water(self) -> bool:
+        return self.converted_name == "water"

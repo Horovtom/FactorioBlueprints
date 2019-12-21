@@ -60,6 +60,11 @@ class Graph:
 
             self.recipes[converted_recipe_name] = recipe_obj
 
+    def get_resources_list(self):
+        res = list(self.resources_name_map.keys())
+        res.sort()
+        return res
+
     def get_dot(self, compress_water=True):
         """
         Returns dot object with the whole graph
@@ -72,7 +77,63 @@ class Graph:
             recipe.add_to_dot(dot, compress_water)
         return dot
 
-    def get_resources_list(self):
-        res = list(self.resources_name_map.keys())
-        res.sort()
-        return res
+    def get_dot_with_filter(self, resource_human: str, depth: int, direction_str: str, compress_water: bool) -> str:
+        dot = Digraph(comment="Recipes graph with filter")
+        direction = 1 if direction_str == "UP" else -1 if direction_str == "DOWN" else 0
+
+        def draw_recursive_down(resource, curr_depth, added=None):
+            if added is None:
+                added = []
+            if curr_depth > depth:
+                return
+
+            if compress_water and resource.is_water():
+                return
+
+            for recipe in resource.ingredient_of:
+                if recipe not in added:
+                    recipe.add_to_dot(dot, compress_water)
+                    added.append(recipe)
+
+                for i in recipe.get_input_resources():
+                    if i not in added:
+                        i.add_to_dot(dot, compress_water)
+                        added.append(i)
+
+                for o in recipe.get_output_resources():
+                    if o not in added:
+                        o.add_to_dot(dot, compress_water)
+                        added.append(o)
+                    draw_recursive_down(o, curr_depth + 1, added)
+
+        def draw_recursive_up(resource, curr_depth, added=None):
+            if added is None:
+                added = []
+            if curr_depth > depth:
+                return
+
+            if compress_water and resource.is_water():
+                return
+
+            for recipe in resource.created_by:
+                if recipe not in added:
+                    recipe.add_to_dot(dot, compress_water)
+                    added.append(recipe)
+
+                for o in recipe.get_output_resources():
+                    if o not in added:
+                        o.add_to_dot(dot, compress_water)
+                        added.append(o)
+                for i in recipe.get_input_resources():
+                    if i not in added:
+                        i.add_to_dot(dot, compress_water)
+                        added.append(i)
+                    draw_recursive_up(i, curr_depth + 1, added)
+
+        res = self.resources[self.resources_name_map[resource_human]]
+        res.add_to_dot(dot, compress_water)
+        if direction >= 0:
+            draw_recursive_up(res, 0)
+        if direction <= 0:
+            draw_recursive_down(res, 0)
+        return dot

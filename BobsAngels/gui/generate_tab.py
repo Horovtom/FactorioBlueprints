@@ -23,15 +23,17 @@ class GenerateTab:
         self.frame_filter.grid(column=0, row=1, padx=10)
 
         ttk.Label(self.frame_filter, text="Resource:").grid(row=0, column=0)
-        self.frame_filter_resource = ttk.Combobox(self.frame_filter, values=self.graph.get_resources_list())
-        self.frame_filter_resource.grid(row=0, column=1)
+        self.cmbx_filter_resource = ttk.Combobox(self.frame_filter, values=self.graph.get_resources_list())
+        self.cmbx_filter_resource.grid(row=0, column=1)
 
         ttk.Label(self.frame_filter, text="Direction:").grid(row=1, column=0)
-        self.frame_filter_direction = ttk.Combobox(self.frame_filter, values=["UP", "DOWN", "BOTH"])
-        self.frame_filter_direction.grid(row=1, column=1)
+        self.cmbx_filter_direction = ttk.Combobox(self.frame_filter, values=["UP", "DOWN", "BOTH"])
+        self.cmbx_filter_direction.set("UP")
+        self.cmbx_filter_direction.grid(row=1, column=1)
 
         ttk.Label(self.frame_filter, text="Depth:").grid(row=2, column=0)
-        self.entry_filter_depth = ttk.Entry(self.frame_filter, text="1")
+        self.entry_filter_depth = ttk.Entry(self.frame_filter)
+        self.entry_filter_depth.insert(0, "1")
         self.entry_filter_depth.grid(row=2, column=1)
 
         self.chck_compress_water_value = tkinter.IntVar()
@@ -52,8 +54,8 @@ class GenerateTab:
 
     def try_to_render_dot(self, dot):
         try:
-            dot.render("output", view=True)
-            self.lbl_status_value.set("Generated succesfully...")
+            dot.render("output", view=True, cleanup=True)
+            self.lbl_status_value.set("Generated successfully...")
         except graphviz.backend.CalledProcessError:
             self.lbl_status_value.set("Failed to generate, target file opened.")
 
@@ -61,13 +63,17 @@ class GenerateTab:
         if not self.chck_filter_value.get():
             # Just simply draw the whole graph
             self.try_to_render_dot(self.graph.get_dot(self.chck_compress_water_value.get() == 1))
-        else:
-            # Check whether the value in entry depth is a number:
-            if not self.entry_filter_depth.get().isnumeric() or \
-                    int(self.entry_filter_depth.get()) <= 0:
-                self.lbl_status_value.set("Depth has to be a positive number!")
+            return
 
-            # Check whether there is something in the resource cmbx
+        # It has to be filter.
+        # Let's check its values are valid
+        if not self.check_filter_fields_valid():
+            return
+
+        self.try_to_render_dot(self.graph.get_dot_with_filter(self.cmbx_filter_resource.get(),
+                                                              int(self.entry_filter_depth.get()),
+                                                              self.cmbx_filter_direction.get(),
+                                                              self.chck_compress_water_value.get() == 1))
 
     def set_filter_frame_enabled(self, enabled=True):
         for child in self.frame_filter.winfo_children():
@@ -75,3 +81,17 @@ class GenerateTab:
 
     def chck_filter_changed(self):
         self.set_filter_frame_enabled(self.chck_filter_value.get())
+
+    def check_filter_fields_valid(self):
+        # Check whether the value in entry depth is a number:
+        if not self.entry_filter_depth.get().isnumeric() or \
+                int(self.entry_filter_depth.get()) <= 0:
+            self.lbl_status_value.set("Depth has to be a positive number!")
+            return False
+
+        # Check whether there is something in the resource cmbx
+        if self.cmbx_filter_resource.get() == "":
+            self.lbl_status_value.set("There is no resource to set filter on!")
+            return False
+
+        return True
