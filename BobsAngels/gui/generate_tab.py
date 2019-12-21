@@ -1,3 +1,4 @@
+import os
 import tkinter
 from tkinter import ttk
 
@@ -54,7 +55,9 @@ class GenerateTab:
 
     def try_to_render_dot(self, dot):
         try:
-            dot.render("output", view=True, cleanup=True)
+            if not os.path.exists("output"):
+                os.mkdir("output")
+            dot.render("output/output", view=True, cleanup=True)
             self.lbl_status_value.set("Generated successfully...")
         except graphviz.backend.CalledProcessError:
             self.lbl_status_value.set("Failed to generate, target file opened.")
