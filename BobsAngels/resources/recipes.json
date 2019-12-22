@@ -882,6 +882,38 @@
     "time": 4.0,
     "building": "Crystallizer"
   },
+  "Crystallizing to Jivolite Ore": {
+    "inputs": [
+      {
+        "resource": "Mineral Sludge",
+        "amount": 25.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Jivolite Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Crystallizer"
+  },
+  "Crystallizing to Crotinnium Ore": {
+    "inputs": [
+      {
+        "resource": "Mineral Sludge",
+        "amount": 25.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crotinnium Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Crystallizer"
+  },
   "Crystallizing to Rubyte Ore": {
     "inputs": [
       {
@@ -1897,34 +1929,6 @@
     "time": 1.0,
     "building": "Ore Crusher"
   },
-  "Rubyte Hydro Refining": {
-    "inputs": [
-      {
-        "resource": "Crushed Rubyte",
-        "amount": 2.0
-      },
-      {
-        "resource": "Purified Water",
-        "amount": 50.0
-      }
-    ],
-    "outputs": [
-      {
-        "resource": "Rubyte Chunks",
-        "amount": 2.0
-      },
-      {
-        "resource": "Cyan Geode",
-        "amount": 0.5
-      },
-      {
-        "resource": "Nitric Waste Water",
-        "amount": 50.0
-      }
-    ],
-    "time": 2.0,
-    "building": "Flotation Cell"
-  },
   "Soil (Recipe)": {
     "inputs": [
       {
@@ -2408,5 +2412,865 @@
     ],
     "time": 2.0,
     "building": "Advanced Chemical Plant"
+  },
+  "Crystal Slurry (Blue Geode)": {
+    "inputs": [
+      {
+        "resource": "Blue Geode",
+        "amount": 5.0
+      },
+      {
+        "resource": "Sulfuric Acid",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crystal Slurry",
+        "amount": 20.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Liquifier"
+  },
+  "Crystal Slurry (Cyan Geode)": {
+    "inputs": [
+      {
+        "resource": "Cyan Geode",
+        "amount": 5.0
+      },
+      {
+        "resource": "Sulfuric Acid",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crystal Slurry",
+        "amount": 50.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Liquifier"
+  },
+  "Crystal Slurry (Lightgreen Geode)": {
+    "inputs": [
+      {
+        "resource": "Lightgreen Geode",
+        "amount": 5.0
+      },
+      {
+        "resource": "Sulfuric Acid",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crystal Slurry",
+        "amount": 50.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Liquifier"
+  },
+  "Crystal Slurry (Purple Geode)": {
+    "inputs": [
+      {
+        "resource": "Purple Geode",
+        "amount": 5.0
+      },
+      {
+        "resource": "Sulfuric Acid",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crystal Slurry",
+        "amount": 40.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Liquifier"
+  },
+  "Crystal Slurry (Red Geode)": {
+    "inputs": [
+      {
+        "resource": "Red Geode",
+        "amount": 5.0
+      },
+      {
+        "resource": "Sulfuric Acid",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crystal Slurry",
+        "amount": 20.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Liquifier"
+  },
+  "Crystal Slurry (Yellow Geode)": {
+    "inputs": [
+      {
+        "resource": "Yellow Geode",
+        "amount": 5.0
+      },
+      {
+        "resource": "Sulfuric Acid",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crystal Slurry",
+        "amount": 30.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Liquifier"
+  },
+  "4x Silicon Ore": {
+    "inputs": [
+      {
+        "resource": "Crystal Catalyst",
+        "amount": 1.0
+      },
+      {
+        "resource": "Saphirite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Bobmonium Chunks",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Silicon Ore",
+        "amount": 4.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "4x Nickel Ore": {
+    "inputs": [
+      {
+        "resource": "Crystal Catalyst",
+        "amount": 1.0
+      },
+      {
+        "resource": "Saphirite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Rubyte Chunks",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Nickel Ore",
+        "amount": 4.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "4x Aluminium Ore": {
+    "inputs": [
+      {
+        "resource": "Crystal Catalyst",
+        "amount": 1.0
+      },
+      {
+        "resource": "Jivolite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Rubyte Chunks",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Aluminium Ore",
+        "amount": 4.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "4x Zinc Ore": {
+    "inputs": [
+      {
+        "resource": "Crystal Catalyst",
+        "amount": 1.0
+      },
+      {
+        "resource": "Jivolite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Bobmonium Chunks",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Zinc Ore",
+        "amount": 4.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "2x Fluorite Ore": {
+    "inputs": [
+      {
+        "resource": "Crystal Catalyst",
+        "amount": 1.0
+      },
+      {
+        "resource": "Stiratite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Rubyte Chunks",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Fluorite Ore",
+        "amount": 2.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Saphirite Chunks Sorting": {
+    "inputs": [
+      {
+        "resource": "Saphirite Chunks",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Slag",
+        "amount": 1.0
+      },
+      {
+        "resource": "Iron ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Copper ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Silicon Ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Nickel Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Jivolite Chunks Sorting": {
+    "inputs": [
+      {
+        "resource": "Jivolite Chunks",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Slag",
+        "amount": 1.0
+      },
+      {
+        "resource": "Iron ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Copper ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Aluminium Ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Zinc Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Stiratite Chunks Sorting": {
+    "inputs": [
+      {
+        "resource": "Stiratite Chunks",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Slag",
+        "amount": 1.0
+      },
+      {
+        "resource": "Iron ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Copper ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Cobalt Ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Tin Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Crotinnium Chunks Sorting": {
+    "inputs": [
+      {
+        "resource": "Crotinnium Chunks",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Slag",
+        "amount": 1.0
+      },
+      {
+        "resource": "Iron ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Copper ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Lead Ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Silver Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Rubyte Chunks Sorting": {
+    "inputs": [
+      {
+        "resource": "Rubyte Chunks",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Slag",
+        "amount": 1.0
+      },
+      {
+        "resource": "Nickel ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Aluminium ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Lead Ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Gold Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Bobmonium Chunks Sorting": {
+    "inputs": [
+      {
+        "resource": "Bobmonium Chunks",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Slag",
+        "amount": 1.0
+      },
+      {
+        "resource": "Silicon ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Cobalt ore",
+        "amount": 1.0
+      },
+      {
+        "resource": "Tin Ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Zinc Ore",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Ore Sorting Facility Mk2"
+  },
+  "Saphirite Hydro Refining": {
+    "inputs": [
+      {
+        "resource": "Crushed Saphirite",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Saphirite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Blue Geode",
+        "amount": 0.5
+      },
+      {
+        "resource": "Sulfuric Waste Water",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Flotation Cell"
+  },
+  "Jivolite Hydro Refining": {
+    "inputs": [
+      {
+        "resource": "Crushed Jivolite",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Jivolite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purple Geode",
+        "amount": 0.5
+      },
+      {
+        "resource": "Fluoric Waste Water",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Flotation Cell"
+  },
+  "Stiratite Hydro Refining": {
+    "inputs": [
+      {
+        "resource": "Crushed Stiratite",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Stiratite Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Yellow Geode",
+        "amount": 0.5
+      },
+      {
+        "resource": "Sulfuric Waste Water",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Flotation Cell"
+  },
+  "Crotinnium Hydro Refining": {
+    "inputs": [
+      {
+        "resource": "Crushed Crotinnium",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Crotinnium Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Lightgreen Geode",
+        "amount": 0.5
+      },
+      {
+        "resource": "Chloric Waste Water",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Flotation Cell"
+  },
+  "Rubyte Hydro Refining": {
+    "inputs": [
+      {
+        "resource": "Crushed Rubyte",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Rubyte Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Cyan Geode",
+        "amount": 0.5
+      },
+      {
+        "resource": "Nitric Waste Water",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Flotation Cell"
+  },
+  "Bobmonium Hydro Refining": {
+    "inputs": [
+      {
+        "resource": "Crushed Bobmonium",
+        "amount": 2.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Bobmonium Chunks",
+        "amount": 2.0
+      },
+      {
+        "resource": "Cyan Geode",
+        "amount": 0.5
+      },
+      {
+        "resource": "Nitric Waste Water",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Flotation Cell"
+  },
+  "Stone brick (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Stone",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Stone brick",
+        "amount": 1.0
+      }
+    ],
+    "time": 3.2,
+    "building": "Furnace"
+  },
+  "Crystal Slurry to Mineral Sludge Coal Filtering": {
+    "inputs": [
+      {
+        "resource": "Charcoal filter",
+        "amount": 1.0
+      },
+      {
+        "resource": "Crystal Slurry",
+        "amount": 50.0
+      },
+      {
+        "resource": "Mineralized Water",
+        "amount": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Filter Frame",
+        "amount": 1.0
+      },
+      {
+        "resource": "Mineral Sludge",
+        "amount": 50.0
+      },
+      {
+        "resource": "Sulfuric Waste Water",
+        "amount": 40.0
+      }
+    ],
+    "time": 3.0,
+    "building": "Filtration Unit"
+  },
+  "Crystal Slurry to Mineral Sludge Ceramic Filtering": {
+    "inputs": [
+      {
+        "resource": "Ceramic Filter",
+        "amount": 1.0
+      },
+      {
+        "resource": "Crystal Slurry",
+        "amount": 35.0
+      },
+      {
+        "resource": "Mineralized Water",
+        "amount": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Spent Ceramic Filter",
+        "amount": 1.0
+      },
+      {
+        "resource": "Mineral Sludge",
+        "amount": 35.0
+      },
+      {
+        "resource": "Sulfuric Waste Water",
+        "amount": 20.0
+      }
+    ],
+    "time": 1.5,
+    "building": "Filtration Unit"
+  },
+  "Ceramic Filter (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Filter Frame",
+        "amount": 1.0
+      },
+      {
+        "resource": "Alumina",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Ceramic Filter",
+        "amount": 1.0
+      }
+    ],
+    "time": 1.0,
+    "building": "Assembling Machine"
+  },
+  "Ceramic Filter (Recycle)": {
+    "inputs": [
+      {
+        "resource": "Spent Ceramic Filter",
+        "amount": 1.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Ceramic Filter",
+        "amount": 1.0
+      }
+    ],
+    "time": 0.5,
+    "building": "Assembling Machine Mk2"
+  },
+  "Slurry Ceramic Filtering": {
+    "inputs": [
+      {
+        "resource": "Ceramic Filter",
+        "amount": 1.0
+      },
+      {
+        "resource": "Slag Slurry",
+        "amount": 35.0
+      },
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Spent Ceramic Filter",
+        "amount": 1.0
+      },
+      {
+        "resource": "Mineral Sludge",
+        "amount": 35.0
+      },
+      {
+        "resource": "Sulfuric Waste Water",
+        "amount": 20.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Filtration Unit"
+  },
+  "Chlorine Gas (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Saline Water",
+        "amount": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Sodium Hydroxide",
+        "amount": 1.0
+      },
+      {
+        "resource": "Chlorine Gas",
+        "amount": 40.0
+      },
+      {
+        "resource": "Hydrogen Gas",
+        "amount": 60.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Electrolyser"
+  },
+  "Reversed Water Gas Shift": {
+    "inputs": [
+      {
+        "resource": "Hydrogen Gas",
+        "amount": 50.0
+      },
+      {
+        "resource": "Carbon Dioxide",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Purified Water",
+        "amount": 50.0
+      },
+      {
+        "resource": "Carbon Monoxide",
+        "amount": 50.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Chemical Plant"
+  },
+  "Aluminium Hydroxide (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Sodium Hydroxide",
+        "amount": 3.0
+      },
+      {
+        "resource": "Aluminium Ore",
+        "amount": 12.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Aluminium Hydroxide",
+        "amount": 12.0
+      }
+    ],
+    "time": 6.0,
+    "building": "Powder Mixer"
+  },
+  "24x Gold Ingot": {
+    "inputs": [
+      {
+        "resource": "Gold Ore",
+        "amount": 24.0
+      },
+      {
+        "resource": "Chlorine Gas",
+        "amount": 60.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Gold Ingot",
+        "amount": 24.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Blast Furnace"
+  },
+  "24x Nickel Ingot": {
+    "inputs": [
+      {
+        "resource": "Nickel Ore",
+        "amount": 24.0
+      },
+      {
+        "resource": "Carbon Monoxide",
+        "amount": 60.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Nickel Ingot",
+        "amount": 24.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Blast Furnace"
   }
 }

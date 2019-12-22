@@ -7,6 +7,7 @@ import graphviz
 
 class GenerateTab:
     def __init__(self, parent, graph):
+        self.curr_gen_num = 0
         self.parent = parent
         self.graph = graph
         self.master = ttk.Frame(self.parent)
@@ -37,6 +38,10 @@ class GenerateTab:
         self.entry_filter_depth.insert(0, "1")
         self.entry_filter_depth.grid(row=2, column=1)
 
+        ttk.Label(self.frame_filter, text="Omit:").grid(row=3, column=0)
+        self.entry_filter_omit = ttk.Entry(self.frame_filter)
+        self.entry_filter_omit.grid(row=3, column=1)
+
         self.chck_compress_water_value = tkinter.IntVar()
         self.chck_compress_water = tkinter.Checkbutton(self.master, text="Compress water node",
                                                        variable=self.chck_compress_water_value)
@@ -54,13 +59,16 @@ class GenerateTab:
         self.set_filter_frame_enabled(self.chck_filter_value.get())
 
     def try_to_render_dot(self, dot):
+        if not os.path.exists("output"):
+            os.mkdir("output")
         try:
-            if not os.path.exists("output"):
-                os.mkdir("output")
-            dot.render("output/output", view=True, cleanup=True)
+            self.curr_gen_num += 1
+            dot.render("output/output{}".format(self.curr_gen_num), view=True, cleanup=True)
             self.lbl_status_value.set("Generated successfully...")
         except graphviz.backend.CalledProcessError:
             self.lbl_status_value.set("Failed to generate, target file opened.")
+            if self.curr_gen_num < 10:
+                self.try_to_render_dot(dot)
 
     def btn_generate_pressed(self):
         if not self.chck_filter_value.get():
@@ -73,9 +81,13 @@ class GenerateTab:
         if not self.check_filter_fields_valid():
             return
 
+        omit_list = []
+        if self.entry_filter_omit.get().strip() != "":
+            omit_list = self.entry_filter_omit.get().split(",")
         self.try_to_render_dot(self.graph.get_dot_with_filter(self.cmbx_filter_resource.get(),
                                                               int(self.entry_filter_depth.get()),
                                                               self.cmbx_filter_direction.get(),
+                                                              omit_list,
                                                               self.chck_compress_water_value.get() == 1))
 
     def set_filter_frame_enabled(self, enabled=True):

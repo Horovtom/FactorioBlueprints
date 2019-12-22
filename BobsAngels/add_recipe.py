@@ -1,6 +1,6 @@
 import json
 
-with open("recipes.json", 'r') as recipes_file:
+with open("resources/recipes.json", 'r') as recipes_file:
     recipes = json.load(recipes_file)
 
 while True:
@@ -46,14 +46,10 @@ while True:
     }
 
     recipes[recipe_name] = rec_dict
+
+    with open("resources/recipes.json", "w") as recipes_file:
+        json.dump(recipes, recipes_file)
+
     i = input("\n\nAnother one? (y/n) ")
     if not (len(i) == 0 or i.lower() == "y"):
         break
-
-with open("recipes.json", "w") as recipes_file:
-    json.dump(recipes, recipes_file)
-
-i = input("\nOpen result? (y/n) ")
-if len(i) == 0 or i.lower() == "y":
-    import graph_generator
-    graph_generator.run()

@@ -76,9 +76,11 @@ class Graph:
             recipe.add_to_dot(dot, compress_water)
         return dot
 
-    def get_dot_with_filter(self, resource_human: str, depth: int, direction_str: str, compress_water: bool):
+    def get_dot_with_filter(self, resource_human: str, depth: int, direction_str: str, omit_str: list,
+                            compress_water: bool):
         dot = DotWrapper(comment="Recipes graph with filter")
         direction = 1 if direction_str == "UP" else -1 if direction_str == "DOWN" else 0
+        omit = list(map(lambda x: self.resources[self.resources_name_map[x]], omit_str))
 
         def draw_recursive_down(resource, curr_depth):
             if curr_depth > depth:
@@ -87,7 +89,13 @@ class Graph:
             if compress_water and resource.is_water():
                 return
 
+            if resource in omit:
+                return
+
             for recipe in resource.ingredient_of:
+                if any(recipe.is_from_resource(x) for x in omit):
+                    continue
+
                 recipe.add_to_dot(dot, compress_water)
 
                 for i in recipe.get_input_resources():
@@ -102,6 +110,9 @@ class Graph:
                 return
 
             if compress_water and resource.is_water():
+                return
+
+            if resource in omit:
                 return
 
             for recipe in resource.created_by:

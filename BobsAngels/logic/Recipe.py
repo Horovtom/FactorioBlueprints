@@ -29,6 +29,9 @@ class Recipe:
     def get_output_resources(self):
         return [x[0] for x in self.output_resources.values()]
 
+    def is_from_resource(self, resource):
+        return any(x == resource for x in self.get_input_resources())
+
     def add_to_dot(self, dot_obj, compress_water=True):
 
         label = "{}\\n{}\\n{}s".format(self.human_name, self.building, format_number(self.time))
