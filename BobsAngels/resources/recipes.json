@@ -92,7 +92,7 @@
     ],
     "outputs": [
       {
-        "resource": "Iron Plate",
+        "resource": "Iron plate",
         "amount": 4
       }
     ],
@@ -3272,5 +3272,473 @@
     ],
     "time": 4.0,
     "building": "Blast Furnace"
+  },
+  "Advanced Circuit (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Electronic circuit",
+        "amount": 2.0
+      },
+      {
+        "resource": "Electronic circuit board",
+        "amount": 2.0
+      },
+      {
+        "resource": "Aluminium plate",
+        "amount": 4.0
+      },
+      {
+        "resource": "Copper cable",
+        "amount": 4.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Advanced circuit",
+        "amount": 1.0
+      }
+    ],
+    "time": 6.0,
+    "building": "Assembling Machine"
+  },
+  "Electronic circuit board (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Solder",
+        "amount": 1.0
+      },
+      {
+        "resource": "Basic electronic components",
+        "amount": 4.0
+      },
+      {
+        "resource": "Transistors",
+        "amount": 4.0
+      },
+      {
+        "resource": "Circuit board",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Electronic circuit board",
+        "amount": 1.0
+      }
+    ],
+    "time": 5.0,
+    "building": "Assembling Machine"
+  },
+  "5x Transistors": {
+    "inputs": [
+      {
+        "resource": "Plastic bar",
+        "amount": 1.0
+      },
+      {
+        "resource": "Silicon wafer",
+        "amount": 2.0
+      },
+      {
+        "resource": "Tinned copper wire",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Transistors",
+        "amount": 5.0
+      }
+    ],
+    "time": 3.5,
+    "building": "Assembling machine"
+  },
+  "8x Silicon wafer": {
+    "inputs": [
+      {
+        "resource": "Mono Silicon",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Silicon wafer",
+        "amount": 8.0
+      }
+    ],
+    "time": 5.0,
+    "building": "Assembling machine"
+  },
+  "4x Mono Silicon": {
+    "inputs": [
+      {
+        "resource": "Mono Silicon Seed",
+        "amount": 1.0
+      },
+      {
+        "resource": "Molten Silicon",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Mono Silicon",
+        "amount": 4.0
+      }
+    ],
+    "time": 6.0,
+    "building": "Casting Machine"
+  },
+  "4x Plastic bar": {
+    "inputs": [
+      {
+        "resource": "Liquid Plastic",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Plastic bar",
+        "amount": 4.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Assembling machine"
+  },
+  "10x Liquid Plastic": {
+    "inputs": [
+      {
+        "resource": "Propene Gas",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Liquid Plastic",
+        "amount": 10.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Chemical plant"
+  },
+  "Synthesis Propene": {
+    "inputs": [
+      {
+        "resource": "Methanol Gas",
+        "amount": 100.0
+      },
+      {
+        "resource": "Steam",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Propene Gas",
+        "amount": 80.0
+      },
+      {
+        "resource": "Residual Gas",
+        "amount": 20.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Steam Cracker"
+  },
+  "Catalytic Synthesis Methanol": {
+    "inputs": [
+      {
+        "resource": "Green Metal Catalyst",
+        "amount": 1.0
+      },
+      {
+        "resource": "Carbon Dioxide",
+        "amount": 100.0
+      },
+      {
+        "resource": "Hydrogen Gas",
+        "amount": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Metal Catalyst Carrier",
+        "amount": 1.0
+      },
+      {
+        "resource": "Methanol Gas",
+        "amount": 100.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Chemical Plant"
+  },
+  "Methanol Gas (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Cellulose Fiber",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Methanol Gas",
+        "amount": 100.0
+      }
+    ],
+    "time": 30.0,
+    "building": "Chemical plant"
+  },
+  "Electronic circuit (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Basic electronic board",
+        "amount": 1.0
+      },
+      {
+        "resource": "Iron plate",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Electronic circuit",
+        "amount": 1.0
+      }
+    ],
+    "time": 0.5,
+    "building": "Assembling machine"
+  },
+  "Circuit board (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Phenolic board",
+        "amount": 1.0
+      },
+      {
+        "resource": "Copper plate",
+        "amount": 1.0
+      },
+      {
+        "resource": "Tin plate",
+        "amount": 1.0
+      },
+      {
+        "resource": "Ferric Chloride Solution",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Circuit board",
+        "amount": 1.0
+      }
+    ],
+    "time": 5.0,
+    "building": "Assembling machine"
+  },
+  "2x Phenolic board": {
+    "inputs": [
+      {
+        "resource": "Wooden board",
+        "amount": 2.0
+      },
+      {
+        "resource": "Resin",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Phenolic board",
+        "amount": 2.0
+      }
+    ],
+    "time": 0.5,
+    "building": "Assembling machine"
+  },
+  "Ferric Chloride Solution (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Iron ore",
+        "amount": 2.0
+      },
+      {
+        "resource": "Hydrogen Chloride Gas",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Ferric Chloride Solution",
+        "amount": 40.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Chemical Plant"
+  },
+  "Hydrogen Chloride Gas (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Chlorine Gas",
+        "amount": 50.0
+      },
+      {
+        "resource": "Hydrogen Gas",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Hydrogen Chloride Gas",
+        "amount": 100.0
+      }
+    ],
+    "time": 2.0,
+    "building": "Chemical Plant"
+  },
+  "Invar plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Invar",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Invar plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Nickel plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Nickel",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Nickel plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Gold plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Gold",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Gold plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Cobalt steel plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Cobalt Steel",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Cobalt steel plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Cobalt plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Cobalt",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Cobalt plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Zinc plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Zinc",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Zinc plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Brass plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Brass",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Brass plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Gunmetal plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Gunmetal",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Gunmetal plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
+  },
+  "Silver plate (Recipe)": {
+    "inputs": [
+      {
+        "resource": "Molten Silver",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "resource": "Silver plate",
+        "amount": 4.0
+      }
+    ],
+    "time": 4.0,
+    "building": "Casting Machine"
   }
 }

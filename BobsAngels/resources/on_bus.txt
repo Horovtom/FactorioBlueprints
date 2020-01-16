@@ -1,0 +1,1 @@
+Iron plate,Copper plate,Steel plate,Aluminium plate,Invar plate,Nickel plate,Gold plate,Mono Silicon,Cobalt steel plate,Cobalt plate,Zinc plate,Tin plate,Brass plate,Bronze plate,Gunmetal plate,Solder,Silver plate,Lead plate,Carbon,Basic circuit board,Nickel Ore,Silicon Ore,Aluminium Ore,Iron Ore

@@ -39,8 +39,12 @@ class GenerateTab:
         self.entry_filter_depth.grid(row=2, column=1)
 
         ttk.Label(self.frame_filter, text="Omit:").grid(row=3, column=0)
-        self.entry_filter_omit = ttk.Entry(self.frame_filter)
+        self.entry_filter_omit_var = tkinter.StringVar(self.frame_filter)
+        self.entry_filter_omit = ttk.Entry(self.frame_filter, textvariable=self.entry_filter_omit_var)
         self.entry_filter_omit.grid(row=3, column=1)
+        # TODO: Temporary
+        with open("resources/on_bus.txt", "r") as f:
+            self.entry_filter_omit_var.set(f.read())
 
         self.chck_compress_water_value = tkinter.IntVar()
         self.chck_compress_water = tkinter.Checkbutton(self.master, text="Compress water node",
